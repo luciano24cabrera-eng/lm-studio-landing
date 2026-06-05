@@ -6,7 +6,7 @@ const METRICS = [
     Icon: ShieldCheck,
     value: '100%',
     label: 'Codigo Personalizado',
-    description: 'Sin templates genericos. Cada linea de codigo es creada especificamente para tu proyecto.',
+    description: 'Sin templates genéricos. Cada línea de código es creada específicamente para tu proyecto.',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/15',
@@ -31,7 +31,7 @@ const METRICS = [
   },
   {
     Icon: Gauge,
-    value: 'Rapido',
+    value: 'Rápido',
     label: 'Tiempo de entrega',
     description: 'Procesos optimizados para lanzar productos funcionales en el menor tiempo posible.',
     color: 'text-emerald-400',
@@ -58,7 +58,7 @@ export default function WhyUs() {
             <span className="text-gradient-green">Por que</span> LM Studio?
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            Comprometidos con entregar valor real a traves de tecnologia que funciona.
+            Comprometidos con entregar valor real a través de tecnología que funciona.
           </p>
         </motion.div>
 

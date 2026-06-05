@@ -28,7 +28,7 @@ export default function Footer() {
               />
               <span className="font-semibold text-base tracking-tight">LM Studio</span>
             </a>
-            <p className="text-xs text-zinc-500">Tu vision, nuestro codigo.</p>
+            <p className="text-xs text-zinc-500">Tu visión, nuestro código.</p>
           </div>
 
           {/* Links */}

@@ -25,7 +25,7 @@ const CONTACT_CARDS = [
   {
     Icon: Globe,
     title: 'Redes Sociales',
-    items: ['Proximamente'],
+    items: ['Próximamente'],
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/15',
@@ -105,7 +105,7 @@ export default function Contact() {
                         {item}
                       </a>
                     ) : (
-                      <span className={`block text-sm ${item === 'Proximamente' ? 'text-zinc-500' : card.color}`}>
+                      <span className={`block text-sm ${item === 'Próximamente' ? 'text-zinc-500' : card.color}`}>
                         {item}
                       </span>
                     )}

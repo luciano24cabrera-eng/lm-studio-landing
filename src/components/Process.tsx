@@ -15,8 +15,8 @@ const STEPS = [
   {
     number: '02',
     Icon: Lightbulb,
-    title: 'Diseno',
-    description: 'Creamos una solucion enfocada en resultados, con una arquitectura clara y un plan de ejecucion.',
+    title: 'Diseño',
+    description: 'Creamos una solución enfocada en resultados, con una arquitectura clara y un plan de ejecución.',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
     border: 'border-emerald-500/20',
@@ -26,7 +26,7 @@ const STEPS = [
     number: '03',
     Icon: Code2,
     title: 'Desarrollo',
-    description: 'Construimos el sistema con tecnologias modernas, iterando rapido y manteniendo calidad.',
+    description: 'Construimos el sistema con tecnologías modernas, iterando rápido y manteniendo calidad.',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/20',
@@ -36,7 +36,7 @@ const STEPS = [
     number: '04',
     Icon: Rocket,
     title: 'Lanzamiento',
-    description: 'Desplegamos y optimizamos continuamente para asegurar que el producto funcione a su maximo nivel.',
+    description: 'Desplegamos y optimizamos continuamente para asegurar que el producto funcione a su máximo nivel.',
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10',
     border: 'border-emerald-500/20',
@@ -63,7 +63,7 @@ export default function Process() {
             <span className="text-gradient-blue">proceso</span>
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            Un metodo probado que transforma ideas en productos funcionales.
+            Un método probado que transforma ideas en productos funcionales.
           </p>
         </motion.div>
 

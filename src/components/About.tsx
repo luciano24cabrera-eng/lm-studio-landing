@@ -5,7 +5,7 @@ const PILLARS = [
   {
     Icon: Code2,
     title: 'Desarrollo de Software',
-    description: 'Aplicaciones web modernas construidas con las mejores tecnologias del ecosistema actual.',
+    description: 'Aplicaciones web modernas construidas con las mejores tecnologías del ecosistema actual.',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
   },
@@ -42,13 +42,11 @@ export default function About() {
             className="space-y-6"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-              Construimos tecnologia que{' '}
+              Construimos tecnología que{' '}
               <span className="text-gradient-green">impulsa negocios.</span>
             </h2>
             <p className="text-zinc-400 text-lg leading-relaxed max-w-lg">
-              En LM Studio combinamos desarrollo de software, automatizacion e inteligencia
-              artificial para crear soluciones modernas que ayudan a las empresas a ahorrar
-              tiempo, aumentar productividad y crecer.
+              En LM Studio diseñamos y desarrollamos soluciones digitales que ayudan a las empresas a optimizar procesos, mejorar su presencia tecnológica y crecer de manera sostenible.
             </p>
             <p className="text-zinc-500 text-base leading-relaxed max-w-lg">
               Trabajamos como un equipo tecnico dedicado a tu proyecto, con enfoque en

@@ -18,7 +18,7 @@ const SERVICES: Service[] = [
     Icon: Globe,
     title: 'Landing Pages',
     description:
-      'Paginas rapidas, modernas y optimizadas para convertir visitas en clientes.',
+      'Páginas rapidas, modernas y optimizadas para convertir visitas en clientes.',
     iconBg: 'bg-blue-500/15',
     iconColor: 'text-blue-400',
     iconGlow: 'shadow-blue-500/30',
@@ -77,7 +77,7 @@ export default function Services() {
             <span className="text-gradient-green">construimos</span>
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            Soluciones tecnologicas disenadas para resolver problemas reales y generar resultados medibles.
+            Soluciones tecnológicas diseñadas para resolver problemas reales y generar resultados medibles.
           </p>
         </motion.div>
 

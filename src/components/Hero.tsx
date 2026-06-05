@@ -48,8 +48,8 @@ export default function Hero() {
               animate="visible"
               className="text-lg text-zinc-400 leading-relaxed max-w-[500px]"
             >
-              Desarrollamos aplicaciones web, automatizaciones e inteligencia
-              artificial para empresas que quieren crecer mas rapido.
+              Desarrollamos aplicaciones web, automatizaciónes e inteligencia
+              artificial para empresas que quieren crecer mas rápido.
             </motion.p>
 
             <motion.div

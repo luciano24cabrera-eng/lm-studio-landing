@@ -11,6 +11,8 @@ interface Project {
   technologies: string[]
   gradient: string
   accentColor: string
+  url: string
+  preview?: string
 }
 
 const PROJECTS: Project[] = [
@@ -20,7 +22,7 @@ const PROJECTS: Project[] = [
     category: 'Inteligencia Artificial',
     categoryColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
     description:
-      'Plataforma de reclutamiento impulsada por IA diseñada para optimizar la seleccion de candidatos y agilizar los procesos de contratacion.',
+      'Plataforma de reclutamiento impulsada por IA diseñada para optimizar la selección de candidatos y agilizar los procesos de contratación.',
     features: [
       'Analisis inteligente de perfiles',
       'Filtrado automatizado de candidatos',
@@ -30,6 +32,8 @@ const PROJECTS: Project[] = [
     technologies: ['React', 'TypeScript', 'AI Integration', 'Supabase'],
     gradient: 'from-blue-600/20 via-blue-900/10 to-transparent',
     accentColor: 'blue',
+    url: 'https://cvsmart-production.up.railway.app/',
+    preview: '/preview-cvsmart.png',
   },
   {
     id: 2,
@@ -37,16 +41,18 @@ const PROJECTS: Project[] = [
     category: 'Landing Page',
     categoryColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
     description:
-      'Sitio web disenado para fortalecer la presencia digital de una marca especializada en productos de cafeina y energia.',
+      'Sitio web diseñado para fortalecer la presencia digital de una marca especializada en productos de cafeína y energía.',
     features: [
-      'Diseno orientado a conversion',
+      'Diseño orientado a conversión',
       'Presentacion profesional de productos',
-      'Experiencia optimizada para moviles',
+      'Experiencia optimizada para móviles',
       'Identidad visual moderna',
     ],
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     gradient: 'from-emerald-600/20 via-emerald-900/10 to-transparent',
     accentColor: 'emerald',
+    url: 'https://powergoms-mx.vercel.app/',
+    preview: '/preview-powergoms.png',
   },
   {
     id: 3,
@@ -54,16 +60,18 @@ const PROJECTS: Project[] = [
     category: 'Software & IA',
     categoryColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
     description:
-      'Landing page corporativa desarrollada para presentar nuestros servicios de desarrollo web, automatizacion e inteligencia artificial.',
+      'Landing page corporativa desarrollada para presentar nuestros servicios de desarrollo web, automatización e inteligencia artificial.',
     features: [
       'Branding tecnologico',
-      'Diseno premium',
+      'Diseño premium',
       'Animaciones modernas',
       'Captacion de clientes potenciales',
     ],
     technologies: ['React', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
     gradient: 'from-blue-700/20 via-blue-950/10 to-transparent',
     accentColor: 'blue',
+    url: 'https://lm-studio-landing.vercel.app/',
+    preview: '/preview-lmstudio.png',
   },
 ]
 
@@ -75,16 +83,21 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -6, transition: { type: 'spring', stiffness: 280, damping: 20 } }}
-      className="glass-card rounded-2xl overflow-hidden group cursor-default"
+      className="glass-card rounded-2xl overflow-hidden group cursor-default flex flex-col"
     >
       {/* Card visual header */}
-      <div className={`h-40 bg-gradient-to-br ${project.gradient} relative overflow-hidden flex items-end p-5`}>
-        <div className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%)`,
-          }}
-        />
-        <div className="relative">
+      <div className="h-44 relative overflow-hidden">
+        {project.preview ? (
+          <img
+            src={project.preview}
+            alt={project.title}
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className={`w-full h-full bg-gradient-to-br ${project.gradient}`} />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/90 via-[#050816]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 p-5">
           <div className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${project.categoryColor} inline-block mb-2`}>
             {project.category}
           </div>
@@ -105,12 +118,27 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </ul>
 
-        <div className="flex flex-wrap gap-1.5 pt-1">
-          {project.technologies.map((tech) => (
-            <span key={tech} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/8 text-zinc-400">
-              {tech}
-            </span>
-          ))}
+        <div className="flex items-center justify-between gap-3 pt-1">
+          <div className="flex flex-wrap gap-1.5">
+            {project.technologies.map((tech) => (
+              <span key={tech} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/8 text-zinc-400">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`shrink-0 inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-200 hover:-translate-y-0.5 ${
+              project.accentColor === 'blue'
+                ? 'text-blue-400 border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20'
+                : 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20'
+            }`}
+          >
+            Ver
+            <ExternalLink size={11} strokeWidth={2} />
+          </a>
         </div>
       </div>
     </motion.div>
@@ -134,7 +162,7 @@ export default function Portfolio() {
             <span className="text-gradient-blue">desarrolladas</span>
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl">
-            Cada proyecto representa un problema real que resolvimos mediante software, diseno y automatizacion.
+            Cada proyecto representa un problema real que resolvimos mediante software, diseño y automatización.
           </p>
         </motion.div>
 
@@ -171,7 +199,7 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-zinc-300 mb-1.5">La solucion</div>
+                  <div className="text-xs font-semibold text-zinc-300 mb-1.5">La solución</div>
                   <p className="text-zinc-500 text-xs leading-relaxed">
                     Plataforma con IA que evalua y clasifica candidatos automaticamente, priorizando los perfiles mas relevantes.
                   </p>
@@ -180,7 +208,7 @@ export default function Portfolio() {
                   <div className="text-xs font-semibold text-zinc-300 mb-2">Resultados</div>
                   <ul className="space-y-1.5">
                     {[
-                      'Mayor velocidad en la revision de perfiles',
+                      'Mayor velocidad en la revisión de perfiles',
                       'Mejor organizacion de candidatos',
                       'Experiencia moderna para reclutadores',
                     ].map((r) => (
@@ -193,12 +221,23 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {['React', 'TypeScript', 'AI Integration', 'Supabase'].map((t) => (
-                  <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/8 text-zinc-400">
-                    {t}
-                  </span>
-                ))}
+              <div className="flex items-center justify-between gap-4 pt-1">
+                <div className="flex flex-wrap gap-1.5">
+                  {['React', 'TypeScript', 'AI Integration', 'Supabase'].map((t) => (
+                    <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/8 text-zinc-400">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href="https://cvsmart-production.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-blue-400 border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  Ver proyecto
+                  <ExternalLink size={13} strokeWidth={2} />
+                </a>
               </div>
             </div>
 
